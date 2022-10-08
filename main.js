@@ -35,10 +35,10 @@ const runApi = async () => {
             const data = await response.json()
             const dataAdvice = data.slip.advice
             // We write the advice in the DOM
-            if (data.slip === undefined) {
-                advice.innerHTML = 'Advice not found, please try again'
-            } else {
+            if (data.slip != undefined) {
                 advice.innerHTML = `"${dataAdvice}"`
+            } else {
+                advice.innerHTML = 'Advice not found, please try again'
             }
         } else if (response.status === 400) {
             console.log('The searched content is not found')
@@ -80,6 +80,7 @@ const runApi = async () => {
 
     } catch (error) {
         console.log(error)
+        advice.innerHTML = 'Advice not found, please try again 😭'
     }
 }
 
