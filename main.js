@@ -33,7 +33,6 @@ const runApi = async () => {
         // We check the status of the response
         if (response.status === 200) {
             const data = await response.json()
-            console.log(data.slip)
             const dataAdvice = data.slip.advice
             // We write the advice in the DOM
             if (data.slip === undefined) {
