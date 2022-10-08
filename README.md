@@ -6,6 +6,8 @@ El desafío es desarrollar esta aplicación generadora de consejos y lograr que 
 - CSS
 - JS Vanilla (with animejs library)
 
+![desktop-design](https://user-images.githubusercontent.com/112582420/194676826-bee97bad-cb89-4471-bb1d-3923257236b0.jpg)
+
 # Guía de Estilo
 
 ## Diseño
