@@ -16,7 +16,7 @@ button.addEventListener('click', () => {
         setTimeout(() => {
             // // We write in the DOM the new number of advice
             adviceNumberTitle.innerHTML = `ADVICE #${adviceNumber}`
-        }, 500);
+        }, 600);
         // We run the function
         runApi()
 
@@ -33,9 +33,14 @@ const runApi = async () => {
         // We check the status of the response
         if (response.status === 200) {
             const data = await response.json()
+            console.log(data.slip)
             const dataAdvice = data.slip.advice
             // We write the advice in the DOM
-            advice.innerHTML = `"${dataAdvice}"`
+            if (data.slip === undefined) {
+                advice.innerHTML = 'Advice not found, please try again'
+            } else {
+                advice.innerHTML = `"${dataAdvice}"`
+            }
         } else if (response.status === 400) {
             console.log('The searched content is not found')
         } else {
