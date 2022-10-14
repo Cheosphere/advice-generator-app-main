@@ -92,6 +92,14 @@ body {
     box-shadow: 0 0 2.1rem var(--neon-green);
 }
 
+@media screen and (max-width: 930px) {
+    
+    body {
+        min-height: 440px;
+    }
+
+}
+
 @media screen and (max-width: 520px) {
     
     .container {

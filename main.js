@@ -16,7 +16,7 @@ button.addEventListener('click', () => {
         setTimeout(() => {
             // // We write in the DOM the new number of advice
             adviceNumberTitle.innerHTML = `ADVICE #${adviceNumber}`
-        }, 600);
+        }, 400);
         // We run the function
         runApi()
 
@@ -53,10 +53,9 @@ const runApi = async () => {
                 value: [0, 1],
                 duration: 1000
             },
-            rotate: {
-                value:[-360, 360],
-                duration: 500,
-                easing: 'easeInOutSine'
+            translateY: {
+                value:[-100, 0],
+                duration: 500
             },
             duration: 200,
             easing: 'easeInOutQuart'
@@ -65,15 +64,15 @@ const runApi = async () => {
         anime({
             targets: '.card_dice',
             rotate: {
-                value:[-360, 360],
-                duration: 500,
+                value: [-360, 360],
+                duration: 1000,
                 delay: 100,
-                easing: 'easeInOutSine'
+                easing: 'easeInOutExpo',
             },
             scale: {
                 value: [0, 1],
                 delay: 100,
-                duration: 200,
+                duration: 100,
                 easing: 'easeInOutSine'
             }
         })
